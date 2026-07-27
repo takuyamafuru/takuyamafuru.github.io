@@ -1,0 +1,83 @@
+@use "./variables.scss" as *;
+
+:root {
+  --academic-rule: color-mix(in srgb, var(--secondary) 32%, transparent);
+}
+
+body {
+  letter-spacing: 0.01em;
+}
+
+.page-title {
+  letter-spacing: 0.04em;
+}
+
+article {
+  line-height: 1.82;
+}
+
+article h1,
+article h2,
+article h3 {
+  letter-spacing: 0.015em;
+}
+
+article h2 {
+  border-bottom: 1px solid var(--academic-rule);
+  padding-bottom: 0.3rem;
+}
+
+article blockquote {
+  border-left-color: var(--secondary);
+}
+
+.homepage-lead {
+  margin: 0.5rem 0 2.25rem;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--secondary) 8%, transparent), transparent 62%),
+    var(--light);
+}
+
+.homepage-lead p {
+  margin: 0;
+  font-size: 1.06rem;
+}
+
+.homepage-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.homepage-links > p {
+  margin: 0;
+}
+
+.homepage-links a {
+  display: block;
+  min-height: 4.2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.65rem;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--light) 94%, var(--secondary));
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.homepage-links a:hover,
+.homepage-links a:focus-visible {
+  border-color: var(--secondary);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .homepage-links {
+    grid-template-columns: 1fr;
+  }
+}
